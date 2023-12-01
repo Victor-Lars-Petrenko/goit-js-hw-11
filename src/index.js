@@ -86,7 +86,7 @@ refs.loadMoreBtn.addEventListener("click", e => {
     pageNumber += 1;
 
     getImages(userInput, pageNumber).then(({ totalHits, hits }) => {
-        if (40 * pageNumber > totalHits) {
+        if (40 * (pageNumber - 1) > totalHits) {
             throw new Error
         }
 
